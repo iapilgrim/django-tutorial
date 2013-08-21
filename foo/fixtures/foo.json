@@ -1,0 +1,8 @@
+[
+{"pk": 1, "model": "sites.site", "fields": {"domain": "example.com", "name": "example.com"}},
+{"pk": 1, "model": "polls.poll", "fields": {"pub_date": "2013-08-20T15:48:24Z", "question": "What's up?"}},
+{"pk": 1, "model": "polls.choice", "fields": {"votes": 3, "poll": 1, "choice": "Not much"}},
+{"pk": 2, "model": "polls.choice", "fields": {"votes": 2, "poll": 1, "choice": "The sky"}},
+{"pk": 3, "model": "polls.choice", "fields": {"votes": 1, "poll": 1, "choice": "Just hacking again"}},
+{"pk": 1, "model": "auth.user", "fields": {"username": "erik", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2013-08-20T17:32:37.626Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$10000$Ho8aNzxLWjmk$dxJYIouThILh/6CyYa1Yc5gScI2kg/dVECmKDkTxQcA=", "email": "erik@saltstack.com", "date_joined": "2013-08-20T15:41:30.057Z"}}
+]
