@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title }}</title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "css/pure-nr-min.css" %}">
+    <link rel="stylesheet" href="{% static "css/foo.css" %}">
+</head>
+<body>
+
+    <div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a href="#" class="pure-menu-heading">
+            <img src="{% static "img/SaltStack-Logo.png" %}" alt="SaltStack" height="38px">
+        </a>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li class="pure-menu-selected"><a href="{% url "poll_list" %}">Polls</a></li>
+        </ul>
+    </div>
+
+    <div class="banner">
+        <h1 class="banner-head">
+            {% block heading %}Heading{% endblock %}
+        </h1>
+    </div>
+
+    <div class="l-content">
+        {% block content %}
+        Content
+        {% endblock %}
+    </div>
+
+    <div class="footer">
+        <p class="l-box">
+        <a href="http://saltstack.com/community">SaltStack.com</a> for maximum awesome.
+        </p>
+    </div>
+
+</body>
+</html>

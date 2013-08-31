@@ -1,12 +1,37 @@
-<h1>{{ poll.question }}</h1>
+{% extends "base.html" %}
+
+{% block "title" %}{{ poll.question }}{% endblock %}
+
+{% block "heading" %}{{ poll.question }}{% endblock %}
+
+{% block "content" %}
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 <form action="/polls/{{ poll.id }}/vote/" method="post">
 {% csrf_token %}
-{% for choice in poll.choice_set.all %}
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-    <label for="choice{{ forloop.counter }}">{{ choice.choice }}</label><br />
-{% endfor %}
-<input type="submit" value="Vote" />
+
+    <div class="pricing-tables pure-g-r">
+        <div class="pure-u-1-4">
+            <div class="pricing-table pricing-table-free">
+                <div class="pricing-table-header">
+                    <h2>{{ poll.question }}</h2>
+                </div>
+
+                <ul class="pricing-table-list">
+                    {% for choice in poll.choice_set.all %}
+                    <li>
+                        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                        <label for="choice{{ forloop.counter }}">{{ choice.choice }}</label><br>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <button class="pure-button button-choose">Vote</button>
+            </div>
+        </div>
+    </div>
+
 </form>
+
+{% endblock %}

@@ -1,9 +1,31 @@
-{% if latest_poll_list %}
-    <ul>
-    {% for poll in latest_poll_list %}
-        <li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+{% extends "base.html" %}
+
+{% block "title" %}Polls{% endblock %}
+
+{% block "heading" %}Polls{% endblock %}
+
+{% block "content" %}
+
+<div class="pricing-tables pure-g-r">
+    <div class="pure-u-1-4">
+        <div class="pricing-table pricing-table-free">
+        {% if latest_poll_list %}
+
+            <div class="pricing-table-header">
+                <h2>{{ poll.question }}</h2>
+            </div>
+
+            <ul class="pricing-table-list">
+                {% for poll in latest_poll_list %}
+                <li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
+                {% endfor %}
+            </ul>
+
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
