@@ -4,14 +4,9 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns(
-    '',
+urlpatterns = patterns('',
     url(r'^polls/', include('foo.polls.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-)
 
-urlpatterns += patterns(
-    '',
     # Examples:
     # url(r'^$', 'foo.views.home', name='home'),
     # url(r'^foo/', include('foo.foo.urls')),
