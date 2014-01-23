@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import DetailView, ListView
-from foo.polls.models import Poll
+from poll.polls.models import Poll
 
 urlpatterns = patterns('',
     url(r'^$',
@@ -17,5 +17,5 @@ urlpatterns = patterns('',
             model=Poll,
             template_name='polls/results.html'),
         name='poll_results'),
-    url(r'^(?P<poll_id>\d+)/vote/$', 'foo.polls.views.vote'),
+    url(r'^(?P<poll_id>\d+)/vote/$', 'poll.polls.views.vote'),
 )

@@ -1,4 +1,4 @@
-from foo.polls.models import Poll, Choice
+from poll.polls.models import Poll, Choice
 from django.contrib import admin
 
 
